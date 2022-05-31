@@ -3,41 +3,68 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      line-height:10%;
+      line-height:5%;
 }
-/*ロゴ画像(potepan:orenge)*/
-.logo {position:absolute; top:10px; left:20px;}
+@media screen and (max-width: 480px){
+  .space {position:fixed;
+          top:0px;
+          left:0px;
+          width:480px;
+          height:40px;
+          z-index:1;
+          background-color:#ffffff;}
+}
+
+/*potepanのロゴ、オレンジ*/
+.logo {position:absolute; top:10px; left:10px;}
 .LOGO{ width:190px;
        height:25px;
       text-align:left;
       padding-right:20px;
 }
-/*カウンセリングボタン*/
+
+@media screen and (max-width: 480px){
+   .logo {position:fixed; top:-10px; laft:5px;
+         z-index:1;
+  }
+}
+/*無料カウンセリングのボタン、メニューバー*/
 .co { background-color:#ffa500;
-      color:#ffffff;
-      border-radius:20px;
+      border-radius:30px;
       padding:10px;
-      margin-top:-20px;
+      position:relative;
+      top:-10px;
+      line-height:0;
+      font-size:10px;
+}
+.header-nav-wrap li:nth-child(9) {top:-10px;
+                                  padding-left:25px;
+                                  font-size:15px;
 }
 
-/*ヘッダーメニュー*/
-.header-nav-wrap p { color:#000000;
+/*ハンバーガーメニュー*/
+.header-nav-wrap {display:flex;
+                  list-style:none;
+                  justify-content:right;
 }
+.header-nav-wrap p { color:#000000;}
 
-.header-nav-wrap li:hover {
-  opacity:0.5;
-}
-
-.header-nav-wrap li { padding-left:10px;
-                      padding-right:-10px;
+.header-nav-wrap li { margin-top:-10px;
+                      padding-right: 25px;
                       margin-left:0px;
                       margin-right:0px;
+                      font-size:12px;
+                      text-align:center;
+                      display:inline-block;
+                      list-style-type:none;
+                      height:30px;
+                      line-height:0;
 }
 
 .header-nav-wrap a { text-decoration:none;}
 
-.header-nav-wrap h6 { color:#000000;
-}
+.header-nav-wrap h6 { color:#000000;}
+
 .nav li {display:inline-block;
           list-style-type:none;
          width:10%;
@@ -59,34 +86,23 @@
   outline:none;
   border-radius:20px;
   position:absolute;right:100px;top:40px;
-  font-size:15px;;
+  font-size:15px;
 }
-
-.counselling:hover {
-  opacity:0.5;
+@media screen and (max-width: 480px){
+  .co {display:none !important;}
 }
-
-
-/*.cm2{
-  margin: 0;padding: 0;
-  box-sizing: border-box;
-}*/
 .list-unstyled{
   list-style: none;
 }
+
 .d-none{
   display: none;
 }
-.d-flex{
-  display: flex;
-  justify-content: space-evenly;
-}
 
-#top-editarea{
+#top-edit{
   overflow: hidden;
 }
 .header-nav{
-  /*background: #47a89c;*/
   padding: 1em;
 }
 .header-nav a{
@@ -101,32 +117,45 @@
     display: block;
   }
   .nav-icon-wrap{
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: 10;
     right: 0;
     z-index: 999;
     background: white;
-    box-shadow: 0 0 1px #333;
+    border:none;
   }
-  .nav-icon{
+  
+.nav-icon{
     position: relative;
     display: block;
-    width: 1.7em;
-    height: 1.7em;
+    top:10px;
+    width: 2em;
+    height: 2em;
   }
-  .nav-icon::before, .nav-icon::after{
+.nav-icon span:nth-of-type(1),
+.nav-icon span:nth-of-type(2),
+.nav-icon span:nth-of-type(3) {
     content: "";
     display: block;
-    width: 60%;
-    border-top: 1px solid #555;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color:#000000;
     position: absolute;
-    top: 30%;
-    left: 20%;
-    transition: .3s all;
-  }
-  .nav-icon::after{
-    top: 70%;
-  }
+}
+.nav-icon span:nth-of-type(1) {
+    top: -25%;
+    transition:.4s;
+}
+.nav-icon span:nth-of-type(2) {
+    top: 0%;
+    transition:.4s;
+}
+.nav-icon span:nth-of-type(3)  {
+    top: 25%;
+    transition:.4s;
+}
+
   .header-nav-wrap{
     display: block;
     position: relative;
@@ -139,25 +168,39 @@
   .header-nav{
     margin: 0;
   }
-  #main-nav:checked ~ nav{
+#main-nav:checked ~ nav{
     display: block;
     left: 0;
   }
-  #main-nav:checked ~ .nav-icon-wrap>.nav-icon::before{
-    top: 50%;
+
+#main-nav:checked ~ .d-none span:nth-of-type(3) {
+    background-color: rgba(255, 255, 255, 0);
+}
+#main-nav:checked ~ .d-none span:nth-of-type(2) {
+    bottom:0;
     transform: rotate(45deg);
-  }
-  #main-nav:checked ~ .nav-icon-wrap>.nav-icon::after{
-    top: 50%;
+    transition:.4s;
+}
+#main-nav:checked ~ .d-none span:nth-of-type(1) {
+    top:0;
     transform: rotate(-45deg);
-  }
+    transition:.4s;
+}
   .header-nav{
     flex-direction: column;
-    background: #47a89c;
+    background: rgba(255, 255, 255, 0.5);
     padding: 1em;
   }
   .header-nav a{
     color: #00000;
+  }
+    .header-nav-wrap li{
+    padding-left:300px;
+    padding-top:5px;
+    padding-bottom:5px;
+    line-height:1;
+    font-size:13px;
+    text-align:center;
   }
 }
 
@@ -165,7 +208,6 @@
 /*ヘッダーここまで*/
 
 /*メイン*/
-/*トップ画像*/
 body { 
   background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/top-hero.png");
   background-position:center top;
@@ -174,39 +216,36 @@ body {
   width:100%;
   height:100%;
 }
-
 @media screen and (max-width: 480px){
- body {background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg");
-        background-size:contain;
-        background-position:0px 50px;
-        max-width:100%;
- }}
-  
-.keyvisual{padding-left:10px;
-           width:auto;
-           height:auto;
+  body {background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg.webp");
+        background-position:0px 40px;
+        background-size:cover;
+        background-repeat:no-repeat;
+        position:relative;
+        width:100%;
+        height:100%;
 }
-@media screen and (max-width: 480px){
-     .keyvisual img{
-                   margin-left:auto;
-                   
-     }}
-/*logo:プログラミングスクールでwebエンジニア排出No.1*/
+}
+
+/*webエンジニア輩出No.1*/
 .mainlogo { position:absolute;
-            top:150px;
-            left:200px;
-            width:100px;
-            height:100px;
-          }  
-/*logo:potepancamp*/          
-.mainlogo2 { position:absolute;
             top:200px;
-            left:350px;
-            width:200px;
+            left:550px;
+            width:150px;
+            height:150px;
+          }  
+@media screen and (max-width: 480px){
+  .mainlogo {left:30px;}
+}
+
+/*potepancampのロゴ、黒色*/
+.mainlogo2 { position:absolute;
+            top:180px;
+            left:200px;
+            width:250px;
             height:50px;
           }  
-
-/*本気でWebエンジニアを目指すなら、本気のプログラミング学習。*/        
+        
 .cm { position:absolute;
       top:250px;
       left:200px;
@@ -215,8 +254,15 @@ body {
 
 .cm span {color:#ffa500;}
 
-/*無料カウンセリングのボタン*/
-.free { background-color:#ffa500;
+.free {background-color:#ffa500;
+       border:none;
+       border-radius:30px;
+       font-size:20px;
+       color:#ffffff;
+       padding:10px 15px 10px 15px;
+}
+
+.caunselling2 { background-color:#ffa500;
              color:#ffffff;
               width:200px;
               height:50px;
@@ -224,63 +270,54 @@ body {
               outline:none;
               border-radius:20px;
               position:absolute;
-                /*top:100px;*/
+                top:100px;
               font-size:15px;
               }
-.free :hover {
-  opacity:0.5;
-}
 
 /*ショッパーズアイ*/
 .source { position:absolute;
-          top:500px;
+          top:480px;
+          left:30px;
           color:#c0c0c0;
           font-size:10px;
-          white-space:nowrap;
+          word-break:break-word;
+          word-wrap:break-word;
+}
+@media screen and (max-width: 480px){
+  .source {width:90%;
+           height:50px;
+           text-align:left;
+           top:450px;
+  }
 }
 
 /*ポテパンキャンプの学割*/
 .cm2 {position:absolute;
-        top:550px;
+        top:510px;
         left:0px;
-        width:85%;
+        width:84.8%;
          background-color:#ff8c00;
         border:100px solid #ff8c00;
 }
-
-
 @media screen and (max-width: 480px){
-    .cm2 {max-width:100%;
-          width:350px;
-          height:auto;
-          background-color:#ff8c00;
-        border:50px solid #ff8c00;
-        margin-right:auto;
-        marigin-left:auto
-    }}
+  .cm2 {left:0px;
+  
+        border:10px solid #ff8c00;
+        width:95%;
+  }
 
-/*potepancampとは*/
-.join {overflow-wrap:normal;
+
+
+.join {　overflow-wrap:normal;
           position:relative;
           top:780px;
           display:flex;
           border:0 none;
           background-color:#ff8c00;
           color:#ffffff;
+          
   }
-  @media screen and (max-width: 480px){
-    .join {margin-top:0px;
-           top:91px;
-           max-width:480px;
-           height:auto;
-    }
-    .join td {display:block;
-              width:480px;
-              height:auto;
-              text-align:center;
-    }
-  }
-  /*aboutのボタン*/
+  
  .btn {background-color:#ffffff;
          color:#ff8c00;
         width:350px;
@@ -289,88 +326,29 @@ body {
       
         border:none;
         outline:none;}
-@media screen and (max-width: 480px){
-  .btn {margin-left:auto;
-        margin-right:auto;
-  }
-}
-
-/*ポテパン紹介ムービー*/
+        
 .yut {text-align:center;
       position:relative;
-      top:900px;
+      top:800px;
       margin-top:10px;
-}
-@media screen and (max-width: 480px){
-  .yut{position:relative;
-       top:100px;}
-  .yut iframe { text-align:center;
-         max-width:95%;
-         height:95%;
-  }
+   
 }
  .under {border-bottom:solid 3px orange;}
  
  .cyr {width:30px;
        height:30px;}
 
-/*potepancampの特徴*/
-.at { text-align:center;
-      position:relative;
-      top:900px;}  
-@media screen and (max-width: 480px){
-  .at {position:relative;
-       top:130px;}
-}
-
-/*potepancampの特徴の共通部*/
-.yt { text-align:center;
-      position:relative;
-      top:900px;
-      background-color:#ffffe0;
-      width:88%;
-      margin:auto;
-      border-radius:30px;
-}
-
-@media screen and (max-width: 480px){
-  .yt { position:relative;
-        top:115px;
-        max-width:90%;
-        height:auto;
-  }
-}
-    
-/*転職事例一覧*/
-.intel1 {dth:950px; 
-         line-height:15px;
+.intel { line-height:15px;
          background-color:#ffffff;
          margin-bottom:10px;
          padding-top:30px;
          border-top:10;
          border-radius:30px;
-  }
-  
-@media screen and (max-width: 480px){
-  .intel1 {width:470px;
-          align:center;
-          
-  }
-  .intel1 td{display:block;
-    width:430px;
-    height:auto;
-    padding-left:0px;
-    text-align:left;
-    background-color:#ffffff;
-  }
-  .intel1 img {width:70px;
-              height:70px;}
-  .intel th {width:430px;
-             height:auto;
-  }
+         
+         
+         
 }
-      
-/*転職先の評価*/
+
 .bak { background-color:#ffffe0;
         position:relative;
         top:925px;
@@ -379,44 +357,10 @@ body {
         margin-right:auto;
         border-radius:20px;
         text-align:center;
-}
-@media screen and (max-width: 480px){
-  .bak { position:relative;
-         top:140px;}
+        
+        
 }
 
-.socore { width:500px;}
-
-@media screen and (max-width: 480px){
-  .socore { max-width:400px;
-            font-size:0.9em;
-  }}
-
-.intel2 {width:950px;}
-
-.intel2 img {width:400px;
-            height:auto;}
-
-@media screen and (max-width: 480px){
-  .intel2 { background-color:#ffffe0;
-            display:block;
-            max-width:480px;
-            margin-right:auto;
-            margin-left:auto;
-  }
-  .intel2 img {max-width:300px;
-               height:auto;
-  }
-  .intel2 td {display:block;
-              width:480px;
-              height:auto;
-              text-align:left;
-    }
-}
-  
-@media screen and (max-width: 480px){
-  .five { margin-top:1300px;}
-}
 .ba { margin-left:auto;
       margin-right:auto;
       background:#ffffe0;
@@ -429,12 +373,27 @@ body {
 .ba1 { margin-left:auto;
       margin-right:auto;
       background:#ffffe0;
+      
       width:85%;
       margin-bottom:30px;
       line-height:1.0;
       top:30px;
       position:relative;
       text-align:center;
+}
+
+.at { text-align:center;
+      position:relative;
+      top:900px;}  
+      
+.yt { text-align:center;
+      position:relative;
+      top:900px;
+      background-color:#ffffe0;
+      width:88%;
+      margin:auto;
+      border-radius:30px;
+      
 }
 
 .brank { background-color:#ffffe0;
@@ -452,9 +411,6 @@ body {
 }
 
 .grooves img {padding:30px 10px 10px 0px;}
-
-@media screen and (max-width: 480px){
-  .grooves { margin-bottom:20px;}}
 
 .aa {line-height:0;
       text-align: left;
@@ -488,9 +444,6 @@ body {
             padding:10px;  
   }
   
-  @media screen and (max-width: 480px){
-    .tutorial {margin-bottom:20px;}}
-  
     .red { text-align:left;
             background-color:#ffffff;
             border-radius:30px;
@@ -500,8 +453,7 @@ body {
             padding:10px; }
   
   .readyimg {padding:25px;}
- 
- /*卒業後の実績*/ 
+  
   .company {  width:88%;
               table-layout:fixed;
               margin:0px;
@@ -511,19 +463,6 @@ body {
               
   }
  .company img {width:80%;}
- 
- @media screen and (max-width: 480px){
-   .company { display:flex;}
-  .company td{flex-direction:row;
-              flex-wrap:wrap;
-              width:50%;
-              height:auto;
-              align:left;
-              }
-   .company img{max-width:200px;
-                height:auto;}
- } 
-
 
 .support { width:88%;
             text-align:left;
@@ -539,24 +478,27 @@ body {
               margin-left:20px;
               margin-top:0px;
  }
- /*コース説明*/
+ 
  .couse { margin-top:950px;
           text-align:center;
           background-color:#d3d3d3;
           margin-left: calc(((100vw - 100%) / 2) * -1);
           margin-right: calc(((100vw - 100%) / 2) * -1);
+         
           }
-@media screen and (max-width: 480px){
-  .couse {max-width:480px;
-          position:absolute;
-          top:5900px;
-  }
-}
           
 .cou { background-color:#ffffff;
         width:80%;
         font-size:15pt;
+        
 }
+          
+.flame {border:1px solid red;
+        padding:20px;
+        margin:20px;
+        text-align:center;
+}
+          
 .cou button {background-color:#000000;
              color:#ffffff;
              border-radius:30px;
@@ -566,25 +508,6 @@ body {
              margin:10px;
 }
 
-@media screen and (max-width: 480px){
-  .cou td { display:block;
-           width:400px;
-           height:auto;
-  }}
-          
-.flame {width:300px;
-        border:1px solid red;
-        padding:20px;
-        margin:20px;
-        text-align:center;
-}
-@media screen and (max-width: 480px){
-  .flame td { width:310px;
-           height:auto;
-           
-  }
-}
-          
 .orange {color:#ffa500;
             font-size:18pt;
             text-align:center;
@@ -594,26 +517,7 @@ body {
              text-align:right;
              font-size:10pt;
               padding-top:100px; 
-}
-@media screen and (max-width: 480px){
-  .osusume img { width:10%;
-                 height:auto;
-                 top:10px;
-                 align:right;
-  }
-  .osusume { display:flex;
-  cdll-padding:10px;
-  }
-  .osusume td{flex-direction:row;
-              flex-wrap:wrap;
-              width:100%;
-              height:auto;
-              text-align:center;
-              }
-  .osusume p {width:50%;
-              height:auto;
-              text-align:left;
-  }
+              
 }
             
 .hidari { display:block;
@@ -640,14 +544,12 @@ body {
 
 .colink { cursor:pointer;}
 
-/*サービスへの想い*/
 .message {text-align:center;
           background-color:#fffaf0;}
-@media screen and (max-width: 480px){
-  .message {margin-top:150px;}
-}
+
 .mass { background-color:#fffaf0;
         color:#d3d3d3;
+        
 }
 
 .mass span {
@@ -658,7 +560,10 @@ body {
             top:50px;
             right:500px;
             font-size:60px;
-  }
+            
+            
+            
+}
 
 .mass p {background-color:#ffffff;
         text-align:left;
@@ -671,15 +576,7 @@ body {
          margin-top:20px;
          font-size:20px;
 }
-@media screen and (max-width: 480px){
-  .mass p { padding-top:-10px;
-            padding-right:20px;
-            width:350px;
-            height:auto;
-            text-align:left;
-            font-size:15px;
-  }
-}
+
 .jefe { width:500px;
         height:300px;
         position:relative;
@@ -687,67 +584,31 @@ body {
         left:350px;
         padding-bottom:30px;
 }
-@media screen and (max-width: 480px){
-  .jefe { width:350px;
-          height:auto;
-          position:relative;
-          left:10px;
-          top:20px;
-          padding-right:auto;
-          padding-left:auto;
-  }
-}
-/*受講生の声*/
-.voice { padding-top:10px;
-         position:relative;
-         top:-300px;
-}
-@media screen and (max-width: 480px){
-  .voice {position:relative;
-          top:10px;
-  }
-}
+
+.voice { padding-top:10px;}
 
 .svoice {width:350px;
               height:300px;
               transition:0.5s;
          }
          
-.cellsize td { 
+.cellsize { display:block;
             padding:20px;
             width:350px;
             height:300px;
             overflow:hidden;
-}
-@media screen and (max-width: 480px){
-  .cellsize { display:flex;
-                width:480px;
-                height:auto;}
+            
 }
 
 .cellsize1 { background-color:#ffffff;
              position:relative;
-             top:-300px;
 }
 
-.cellsize1 td {height:100px;
-               width:400px;
-               height:auto;
-}
-@media screen and (max-width: 480px){
- .cellsize1 { position:relative;
-              top:30px;
- }
-}
- 
-  .cellsize1 td {display:block;
-              width:400px;
-  }
+.cellsize1 td {height:100px;}
 
 .cellsize p { font-size:15px;
               margin-bottom:10px;
-              width:400px;
-              height:auto;
+              
 }
 
 .cellsize a { text-decoration:none;
@@ -756,28 +617,15 @@ body {
 
 .svoice:hover {transform:scale(1.1,1.1);}
 
-.backvoice { position:absolute;
+.backvoice { position:relative;
              left:35%;
-             top:500px;
-}
-@media screen and (max-width: 480px){
-  .backvoice {position:relative;
-              top:10px;
-              left:20px;
-  }
+             top:-100px;
 }
 
 .footer { background-color:#ffa500;
 }
 
 .footer img { margin:20px;}
-@media screen and (max-width: 480px){
-  .footer { background-color:#ffa500;
-            max-width:480px;
-            position:relative;
-            top:100px;
-  }
-}
 
 .foot1 .add { text-align:left;
               display:inline-block;
@@ -817,8 +665,6 @@ body {
       padding-left:125px;
 }
 
-.foot2 { background-color:#ffa500;
-}
 .foot2 a { text-decoration:none;
            color:#000000;
 }
@@ -830,30 +676,8 @@ body {
             left:300px;
 }
 
-.foot2 td:hover {
-  opacity:0.5;
-}
-
-@media screen and ( max-width:479px ){
-	.foot2 { position:relative;
-	         top:70px;
-	}
-	.foot2 td{
-		display:block;
-		max-width:480px;
-	}
-	.foot2 img { left:50px;
-	             width:100px;
-	             height:auto;
-	}
-	.mascot { width:450px;
-	          top:100px;
-	  
-	}
-}
-
 .foot1 .end { display:inline-block;
-       background-color:#ffa500;
+    　 background-color:#ffa500;
        margin:0;
        padding:0;
        border:none;
