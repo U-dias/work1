@@ -59,6 +59,8 @@
                       list-style-type:none;
                       height:30px;
                       line-height:0;
+                      font-weight:bold;
+                      font-family:sans-serif;
 }
 
 .header-nav-wrap a { text-decoration:none;}
