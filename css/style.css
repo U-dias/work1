@@ -305,6 +305,7 @@ body {
        text-align:center;
        
 }
+.disc tr {display:inline-block;}
 .cm2 {  width:80%;
         height:auto;
         background-color:#ff8c00;
@@ -314,6 +315,7 @@ body {
   .disc {max-width:100%;
          top:500px;
 }  
+ .disc tr {display:flex;}
   .cm2 {left:0px;
   
         border:none;
@@ -323,13 +325,15 @@ body {
   }}
 
 /*potepancamとは*/
-.join {   display:table-cell;
+.join1 {
           border:0 none;
           background-color:#ff8c00;
           color:#ffffff;
           font-size:1.2vw;
           text-align:left;
+          width:70%;
   }
+ 
   @media screen and (max-width: 1000px){
     .join {top:240px;
            max-width:100%;
@@ -339,7 +343,8 @@ body {
   
  .btn {background-color:#ffffff;
          color:#ff8c00;
-        width:350px;
+        width:300px;
+        height:auto;
          border-radius:60px;
          font-size:18px;
         border:none;
