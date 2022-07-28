@@ -133,6 +133,7 @@
     top:10px;
     width: 2em;
     height: 2em;
+    cursor:pointer;
   }
   /*三本線*/
 .nav-icon span:nth-of-type(1),
@@ -233,6 +234,14 @@ body {
 }
 }
 
+@media screen and (max-width: 1000px){
+  .keyvisual {position:absolute;
+              top:250px;
+              left:15px;
+              width:550px;
+              font-size:1.8vw;
+               }
+}
 /*webエンジニア輩出No.1*/
 .mainlogo { position:absolute;
             top:200px;
@@ -259,6 +268,9 @@ body {
 }
 
 .cm span {color:#ffa500;}
+@media screen and (max-width: 1000px){
+  .cm {font-size:2.5vw;}
+}
 
 .free {background-color:#ffa500;
        border:none;
@@ -266,6 +278,18 @@ body {
        font-size:20px;
        color:#ffffff;
        padding:10px 15px 10px 15px;
+}
+@media screen and (max-width: 1000px){
+  .free {position:fixed;
+         top:450px;
+         left:20%;
+         z-index:10;
+         width:60%;
+         height:auto;
+         border-radius:20px;
+         font-size:3.0vw;
+         
+  }
 }
 
 .caunselling2 { background-color:#ffa500;
@@ -293,7 +317,7 @@ body {
   .source {width:90%;
            height:50px;
            text-align:left;
-           top:450px;
+           top:380px;
   }
 }
 
@@ -303,8 +327,7 @@ body {
        width:100%;
        background-color:#ff8c00;
        text-align:center;
-       
-}
+       }
 .disc tr {display:inline-block;}
 .cm2 {  width:80%;
         height:auto;
@@ -313,20 +336,25 @@ body {
 }
 @media screen and (max-width: 1000px){
   .disc {max-width:100%;
-         top:500px;
-}  
- .disc tr {display:flex;}
-  .cm2 {left:0px;
-  
+         border:none;
+         top:680px;
+         margin-left:0;
+         
+  }
+         
+ .disc tr td {display:block;
+           text-align:center;
+           }
+           
+ .cm2 {left:0px;
         border:none;
         padding-left:30px;
         padding-right:30px;
-        width:84%;
-  }}
+        width:84%;}
+}
 
 /*potepancamとは*/
-.join1 {
-          border:0 none;
+.join1 {  border:0 none;
           background-color:#ff8c00;
           color:#ffffff;
           font-size:1.2vw;
@@ -335,9 +363,10 @@ body {
   }
  
   @media screen and (max-width: 1000px){
-    .join {top:240px;
-           max-width:100%;
+    .join1 {text-align:center;
            display:block;
+           font-size:1.8vw;
+           width:90%;
     }
   }
   
@@ -349,6 +378,12 @@ body {
          font-size:18px;
         border:none;
         outline:none;}
+ @media screen and (max-width: 1000px){
+   .btn { padding-right:auto;
+          padding-left:auto;
+          font-size:3.0vw;
+   }
+ }
         
 .yut {text-align:center;
       position:relative;
