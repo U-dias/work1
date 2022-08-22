@@ -4,6 +4,7 @@
       justify-content:center;
       align-items:center;
       line-height:5%;
+      
 }
 @media screen and (max-width: 1000px){
   .space {position:fixed;
@@ -16,12 +17,13 @@
 }
 
 /*potepanのロゴ、オレンジ*/
-.logo {position:absolute; top:10px; left:10px;}
-.LOGO{ width:190px;
-       height:25px;
+.logo {position:absolute; top:0px; left:30px;}
+.LOGO{ width:45%;
+       height:auto;
       text-align:left;
       padding-right:20px;
 }
+.logo:hover {opacity:0.8;}
 
 @media screen and (max-width: 1000px){
    .logo {position:fixed; top:-10px; laft:5px;
@@ -35,8 +37,19 @@
       position:relative;
       top:-10px;
       line-height:0;
-      font-size:10px;
+      font-size:30vw;
+      width:120px;
+      text-align:center;
 }
+.co:hover {opacity:0.8;}
+
+.cc {text-align:center;
+     height:auto;
+     width:150px;
+     padding:5px;
+     font-size:1.0vw;
+}
+
 .header-nav-wrap li:nth-child(9) {top:-10px;
                                   padding-left:25px;
                                   font-size:15px;
@@ -46,11 +59,14 @@
 .header-nav-wrap {display:flex;
                   list-style:none;
                   justify-content:right;
+                  margin-top:0px;
+                
 }
-.header-nav-wrap p { color:#000000;}
+.header-nav-wrap p { color:#000000;
+}
 
 .header-nav-wrap li { margin-top:-10px;
-                      padding-right: 25px;
+                      padding-right:40px;
                       margin-left:0px;
                       margin-right:0px;
                       font-size:12px;
@@ -61,6 +77,8 @@
                       line-height:0;
                       font-weight:bold;
                       font-family:sans-serif;
+}
+.header-nav-wrap li:hover {opacity:0.8;
 }
 
 .header-nav-wrap a { text-decoration:none;}
@@ -216,16 +234,17 @@
 
 /*メイン*/
 body { 
-  background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/top-hero.png");
+  background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg");
   background-position:center top;
+  background-size:cover;
   background-repeat:no-repeat;
   position:relative;
   width:100%;
-  height:100%;
+  height:600px;
 }
 @media screen and (max-width: 800px){
   body {background-image: url("https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero-sp.jpg.webp");
-        background-position:0px 40px;
+        background-position:center 40px;
         background-size:cover;
         background-repeat:no-repeat;
         position:relative;
@@ -262,33 +281,82 @@ body {
           }  
         
 .cm { position:absolute;
-      top:250px;
+      top:100px;
       left:200px;
-      font-size:20px;
+      font-size:2vw;
+      text-align:center;
 }
 
 .cm span {color:#ffa500;}
 @media screen and (max-width: 1000px){
-  .cm {font-size:2.5vw;}
+  .cm {font-size:3vw;
+       top:220px;
+  }
 }
 
+.spoint {position:absolute;
+         top:250px;
+         left:150px;
+    }
+@media screen and (max-width: 1000px){
+  .spoint { width:500px;
+            top:340px;
+  }
+  .spoint img {vertical-align:middle;
+}
+
+/*無料カウンセリングボタン　オレンジ*/
 .free {background-color:#ffa500;
        border:none;
        border-radius:30px;
        font-size:20px;
        color:#ffffff;
        padding:10px 15px 10px 15px;
+       position:absolute;
+       top:450px;
+       left:200px;
 }
 @media screen and (max-width: 1000px){
-  .free {position:fixed;
-         top:450px;
+  .free {
+         top:530px;
          left:20%;
-         z-index:10;
-         width:60%;
+        
+         width:90%;
          height:auto;
          border-radius:20px;
          font-size:3.0vw;
-         
+  }
+}
+
+/*資料請求ボタン*/
+.document{ background-color:white;
+           font-size:20px;
+           border-radius:30px;
+           border:solid gray 1px;
+           padding:10px 15px 10px 15px;
+           position:absolute;
+           top:450px;
+           left:400px;
+}
+@media screen and (max-width: 1000px){
+  .document { display:none;}
+}
+
+.fcauns { position:fixed;
+          top:530px;
+          z-index:2;
+          right:100px;
+          width:400px;
+          height:auto;
+}
+.fcauns:hover {cursor:pointer;}
+@media screen and (max-width: 1000px){
+  .fcauns {position:fixed;
+          top:400px;
+          z-index:2;
+          right:10px;
+          width:400px;
+          height:auto;
   }
 }
 
@@ -305,44 +373,88 @@ body {
               }
 
 /*ショッパーズアイ*/
-.source { position:absolute;
-          top:480px;
+.source1 { position:absolute;
+          top:500px;
           left:30px;
           color:#c0c0c0;
-          font-size:10px;
+          font-size:1vw;
           word-break:break-word;
           word-wrap:break-word;
 }
 @media screen and (max-width: 1000px){
-  .source {width:90%;
+  .source1 {width:90%;
            height:50px;
            text-align:left;
-           top:380px;
+           top:590px;
+           font-size:1.5vw;
+           line-height:1;
+  }
+}
+.source2 { position:absolute;
+          top:515px;
+          left:30px;
+          color:#c0c0c0;
+          font-size:1vw;
+          word-break:break-word;
+          word-wrap:break-word;
+}
+@media screen and (max-width: 1000px){
+  .source2 {width:90%;
+           height:50px;
+           text-align:left;
+           top:610px;
+           font-size:1.5vw;
+  }
+}
+.source3 { position:absolute;
+          top:530px;
+          left:30px;
+          color:#c0c0c0;
+          font-size:1vw;
+          word-break:break-word;
+          word-wrap:break-word;
+}
+@media screen and (max-width: 1000px){
+  .source3 {width:90%;
+           height:50px;
+           text-align:left;
+           top:625px;
+           font-size:1.5vw;
   }
 }
 
 /*ポテパンキャンプの学割*/
-.disc {position:absolute;
-       top:560px;
+.disc {display:flex;
+       position:absolute;
+       top:580px;
        width:100%;
        background-color:#ff8c00;
-       text-align:center;
+       text-align:left;
+       list-style:none;
+       border:5px solid #ff8c00;
        }
-.disc tr {display:inline-block;}
+.disc tr {text-align:left;
+          width:50%;
+}
+.disc td {display:table}
+
 .cm2 {  width:80%;
         height:auto;
         background-color:#ff8c00;
         border:none;
 }
 @media screen and (max-width: 1000px){
-  .disc {max-width:100%;
+  .disc {width:92%;
          border:none;
-         top:680px;
-         margin-left:0;
-         
+         top:900px;
+         display:block;
+         text-align:center;
+         border-top:5px solid #ff8c00;
+  
   }
          
- .disc tr td {display:block;
+ .disc td {display:block;
+ width:100%;
            text-align:center;
            }
            
@@ -354,21 +466,50 @@ body {
 }
 
 /*potepancamとは*/
-.join1 {  border:0 none;
-          background-color:#ff8c00;
-          color:#ffffff;
-          font-size:1.2vw;
-          text-align:left;
-          width:70%;
+.join1 { width:50%;
+         left:10%;
+         
   }
  
   @media screen and (max-width: 1000px){
-    .join1 {text-align:center;
-           display:block;
+    .join1 {display:block;
            font-size:1.8vw;
-           width:90%;
+           width:92%;
+           text-align:center;
     }
+    .join1 video {margin-left:10px}
   }
+  
+  .join2 {
+          position:absolute;
+          
+          right:5%;
+          text-align:left;
+          width:50%;
+          font-size:1.3vw;
+          
+  }
+.join2 h1 {text-align:center;}
+.join2 a {text-decoration:none;
+          color:#ffffff;
+}
+
+@media screen and (max-width: 1000px){
+  .join2 {background-color:#ff8c00;
+          display:block;
+          width:100%;
+          top:280px;
+          left:0%;
+          font-size:2vw;
+  }}
+@media screen and (max-width: 1000px){
+  .join2 tr {background-color:blue;}
+}
+@media screen and (max-width: 1000px){
+  .join2 a {text-decoration:none;
+            color:#ffffff;
+}
+}
   
  .btn {background-color:#ffffff;
          color:#ff8c00;
